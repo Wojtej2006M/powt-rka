@@ -138,10 +138,10 @@ Console.WriteLine(ilenapisow);*/
 int[,] tab = new int[10, 10];
 Random random = new Random();
 int ileliczb = 0;
-for (int y = 0; y < 10; y++)
+for (int x = 0; x < 10; x++)
 {
     
-    for ( int x = 0; x < 10; x++)
+    for ( int y = 0; y < 10; y++)
     {
         tab[x, y] = random.Next(0,10);
     }
