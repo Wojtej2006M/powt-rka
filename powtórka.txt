@@ -1,0 +1,190 @@
+//Zadanie 3
+
+//Napisać program, który wczytuje od użytkownika liczby, do momentu aż zostanie podana liczba 150.
+
+//Po zakończeniu działania programu wyświetlona zostaje informacja o sumie oraz średniej z wszystkich
+
+//podanych liczb (poza 150) oraz jak wiele podanych zostało liczb dodatnich, podzielnych przez 3.
+/*int a=0;
+*//*int suma = 0;
+int ileliczb = 0;
+int ileliczbpodzielnychprzez3 = 0;
+while (a!=150)
+{
+     a = int.Parse(Console.ReadLine());
+    suma=suma+a;
+    ileliczb++;
+    if (a%3==0&&a>0)
+    {
+        ileliczbpodzielnychprzez3++;
+    }
+}
+suma=suma-150;
+int srednia = 0;
+ileliczb = ileliczb - 1;
+srednia=suma/ileliczb;
+Console.WriteLine("suma: "+ suma);
+Console.WriteLine("srednia: "+srednia);
+Console.WriteLine("ile liczb podzielnych przez 3 i wieksze od 0: "+ileliczbpodzielnychprzez3);*/
+//Zadanie 4
+
+//Wylosować 100 liczb < -1000,1000 > wyznaczyć maksimum.
+/*int max = 0;
+int a = 0;
+Random r = new Random();
+for (int i = 0; i < 10; i++)
+{
+    a = r.Next(-1000,1000);
+    Console.WriteLine(i+":"+a);
+    if (max <a)
+    {
+        max = a;
+    }
+    
+}
+Console.WriteLine("max "+max);*/
+//Zadanie 6
+//Uwaga! Plik do zadania do pobrania z moodle.
+
+// W kolejnych wierszach pliku cyfry.txt znajduje się 1000 liczb naturalnych, mniejszych
+
+//niż 10000000000 (jeden miliard), po jednej liczbie w każdym wierszu. Ile liczb parzystych jest w pliku cyfry.txt?
+
+/*FileStream A1=new FileStream(@"C:\Users\wojci\Downloads\cyf.txt", FileMode.Open,FileAccess.Read);
+StreamReader P=new StreamReader(A1);
+int ileparzystych = 0;
+int linia;
+while(!P.EndOfStream)
+{
+    linia=int.Parse(P.ReadLine());
+    if (linia%2==0)
+    {
+        ileparzystych++;
+    }
+}
+P.Close();
+Console.WriteLine(ileparzystych);*/
+
+//Zadanie 7
+
+//Wczytuje z klawiatury stopień n macierzy kwadratowej (n<= 10) a potem jej elementy, a
+
+//następnie podaje numer tego wiersza macierzy w którym suma elementów w wierszu była najmniejsza
+
+
+
+/*//Uwaga! Plik do zadania do pobrania z moodle.
+
+Palindromem nazywamy słowo, które czytane od lewej i od prawej strony jest takie samo.
+
+Na przykład palindromami są słowa:*/
+/*FileStream Z = new FileStream(@"C:\\Users\\wojci\\Downloads\dan.txt", FileMode.Open, FileAccess.Read);
+StreamReader P2=new StreamReader(Z);
+string linia;
+string pomocnicza = "";
+while (!P2.EndOfStream)
+{
+    linia = P2.ReadLine();
+    for (int i =linia.Length-1;i>=0 ; i--)
+    {
+        pomocnicza += linia[i];
+    }
+    if (pomocnicza==linia)
+    {
+        Console.WriteLine(linia);
+    }
+    pomocnicza = "";
+}
+Z.Close();*/
+
+//Zadanie 9
+//W pliku nap.txt znajduje się 1000 napisów o długościach od 2 do 16 znaków, każdy napis w osobnym wierszu.
+//W każdym napisie mogą wystąpić jedynie dwa znaki: „0” lub „1”. Podaj, ile jest napisów, które zawierają taką samą liczbę zer i jedynek.
+
+/*FileStream fileStream = new FileStream(@"C:\Users\wojci\Downloads\nap.txt", FileMode.Open, FileAccess.Read);
+StreamReader P3 = new StreamReader(fileStream);
+string linia;
+int ile1 = 0;
+int ile0 = 0;
+int ilenapisow = 0;
+while (!P3.EndOfStream)
+{
+    *//*linia = int.Parse(P3.ReadLine());*//*
+    linia = P3.ReadLine();
+    for (int i = 0; i < linia.Length; i++)
+    {
+        if (linia[i]=='1')
+        {
+            ile1++;
+        }
+        else if (linia[i]=='0')
+        {
+            ile0++;
+        }
+    }
+    if (ile0==ile1)
+    {
+        ilenapisow++;
+        Console.WriteLine(linia);
+    }
+    ile0 = 0;
+    ile1 = 0;
+}
+Console.WriteLine(ilenapisow);*/
+
+//zad 10
+//Napisz program, który wczyta wartość N, wylosuje tablicę 10x10 liczb z przedziału 0-1000, a następnie wyświetli ją i ile razy N występuje w tablicy.
+/*int N = int.Parse(Console.ReadLine());
+int[,] tab = new int[10, 10];
+Random random = new Random();
+int ileliczb = 0;
+for (int y = 0; y < 10; y++)
+{
+    
+    for ( int x = 0; x < 10; x++)
+    {
+        tab[x, y] = random.Next(0,10);
+    }
+    
+}
+for (int x = 0; x < 10; x++)
+{
+    for (int y = 0; y < 10; y++)
+    {
+        if (tab[x,y]==N)
+        {
+            ileliczb++;
+        }
+        
+    }
+}
+
+Console.WriteLine(ileliczb);*/
+
+//Zadanie 12
+
+//Wylosuje 10000 liczb z przedziału <1,100>. Wyświetli te liczby, które powtarzają się parzystą liczbę razy.
+//nie działa
+/*int[]tab = new int[10000];
+int[]tab2 = new int[10000];
+Random r = new Random();
+int iledanejliczby = 0;
+int pomoc = 0;
+for (int i = 0; i < tab.Length; i++)
+{
+    tab[i] = r.Next(1,100);
+    pomoc=tab[i];
+} 
+    for (int j = 0; j < tab.Length; j++)
+    {
+       pomoc = tab[j];
+        if (pomoc == tab[j])
+        {
+            iledanejliczby++;
+        }
+        if (iledanejliczby % 2 == 0)
+        {
+            Console.WriteLine(pomoc);
+        }
+    }
+*/
